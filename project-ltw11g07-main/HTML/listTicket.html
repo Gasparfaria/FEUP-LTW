@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Fast@Ticket | My Tickets</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <header>
+        <div class="header">
+            <h1 onclick="location.href='main.html'">Fast@Ticket</h1>
+            <a id="nameHeader"></a>
+            <img class="img-header" id="avatarHeader">
+        </div>
+	</header>
+    <nav>
+        <div style="margin-right: 5%;">
+            <div class="dropdown" id="menuDepartment">
+                <button class="dropbtn">Department<i class="fa fa-caret-down" ></i></button>
+                <div class="dropdown-content">
+                    <a href="addDepartment.html" id="addDepartment">Add</a>
+                    <a href="seeDepartment.html" id="seeDepartment">See</a>
+                </div>
+            </div>
+            <div class="dropdown" id="menuUser">
+                <button class="dropbtn">User<i class="fa fa-caret-down"></i></button>
+                <div class="dropdown-content">
+                    <a href="listUser.html">List User</a>
+                    <a href="register.html">Register User</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">Ticket<i class="fa fa-caret-down"></i></button>
+                <div class="dropdown-content">
+                    <a href="myListTicket.html">My Ticket</a>
+                    <a href="createTicket.html">Request a Ticket</a>
+                    <a href="listTicket.html" id="allTicketMenu">All Ticket</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">FAQs<i class="fa fa-caret-down"></i></button>
+                <div class="dropdown-content">
+                    <a href="faqs.html">See Faqs</a>
+                    <a href="addFaqs.html" id="addFaqs">Add Faqs</a>
+                </div>
+            </div>
+            <div class="dropdown" id="menuAdmin">
+                <button class="dropbtn">Account<i class="fa fa-caret-down"></i></button>
+                <div class="dropdown-content">
+                    <a href="myProfile.html">My Profile</a>
+                    <a href="editMyProfile.html">Edit My Profile</a>
+                    <a href="../PHP/logout.php">Logout</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+    <main>
+        <div class="listTicket-box">
+            <h2> All Tickets</h2>
+            <div class="divInputSearch">
+                <select name="filter" id="filter">
+                    <option value="">Type Search</option>
+                    <option value="0">ID</option>
+                    <option value="1">Priority</option>
+                    <option value="2">Title</option>
+                    <option value="3">Status</option>
+                    <option value="4">Created</option>
+                    <option value="5">Updated</option>
+                    <option value="6">Department</option>
+                    <option value="7">Agent</option>
+                    <option value="8">Reporter</option>
+                    <option value="9">Hashtag</option>
+                </select>
+                <input type="text" id="inputSearch" placeholder="Search..">
+            </div>
+            <table class="ticket-list" id="mytable">
+                <thead>
+                    <tr>
+                        <th onclick="sortTable(0)">ID</th>
+                        <th onclick="sortTable(1)">Priority</th>
+                        <th onclick="sortTable(2)">Title</th>
+                        <th onclick="sortTable(3)">Status</th>
+                        <th onclick="sortTable(4)">Created</th>
+                        <th onclick="sortTable(5)">Updated</th>
+                        <th onclick="sortTable(6)">Department</th>
+                        <th onclick="sortTable(7)">Agent</th>
+                        <th onclick="sortTable(8)">Reporter</th>
+                        <th onclick="sortTable(9)">Hashtag</th>
+                        <th>Actions</th>
+                    </tr>
+
+                </thead>
+                <tbody id="tbody"></tbody>
+            </table>
+
+        </div>
+    </main>
+
+	<footer>
+		<p>Copyright © 
+		<script>document.write(new Date().getFullYear());</script>
+		Fast@Ticket. Todos os direitos reservados.</p>
+	</footer>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script defer="defer" src="listTicket.js"></script>
+    <script defer="defer" src="script.js"></script>
+</body>
+</html>
+

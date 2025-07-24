@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Fast@Ticket | New Ticket</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/thinline.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <header>
+        <div class="header">
+            <h1 onclick="location.href='main.html'">Fast@Ticket</h1>
+            <a id="nameHeader"></a>
+			<img class="img-header" id="avatarHeader">
+        </div>
+	</header>
+    <nav>
+        <div style="margin-right: 5%;">
+            <div class="dropdown" id="menuDepartment">
+                <button class="dropbtn">Department<i class="fa fa-caret-down" ></i></button>
+                <div class="dropdown-content">
+                    <a href="addDepartment.html" id="addDepartment">Add</a>
+                    <a href="seeDepartment.html" id="seeDepartment">See</a>
+                </div>
+            </div>
+            <div class="dropdown" id="menuUser">
+                <button class="dropbtn">User<i class="fa fa-caret-down"></i></button>
+                <div class="dropdown-content">
+                    <a href="listUser.html">List User</a>
+                    <a href="register.html">Register User</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">Ticket<i class="fa fa-caret-down"></i></button>
+                <div class="dropdown-content">
+                    <a href="myListTicket.html">My Ticket</a>
+                    <a href="createTicket.html">Request a Ticket</a>
+                    <a href="listTicket.html" id="allTicketMenu">All Ticket</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">FAQs<i class="fa fa-caret-down"></i></button>
+                <div class="dropdown-content">
+                    <a href="faqs.html">See Faqs</a>
+                    <a href="addFaqs.html" id="addFaqs">Add Faqs</a>
+                </div>
+            </div>
+            <div class="dropdown" id="menuAdmin">
+                <button class="dropbtn">Account<i class="fa fa-caret-down"></i></button>
+                <div class="dropdown-content">
+                    <a href="myProfile.html">My Profile</a>
+                    <a href="editMyProfile.html">Edit My Profile</a>
+                    <a href="../PHP/logout.php">Logout</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+	<main>
+		<div class="alert" id="alert" style="visibility: hidden;">
+            <span class="closebtn" onclick='hiddenAlert()'>&times;</span>
+            <strong id="messageAlert"></strong>
+        </div>
+        <div class="create-ticket-box">
+			<h2>Create New Ticket</h2>
+			<form  id="createticket-form" name="createticket-form"  method="post" action="../PHP/addTicket.php">
+				<label>Subject</label>
+				<input id="title" type="text" name="title" placeholder="Subject Ticket (max 50 characters)" maxlength="50">
+
+                <label>Description</label>
+                <textarea id="description" name="description" placeholder="Write description (max 500 characters)" maxlength="500"></textarea>
+
+				<label>Department</label>
+                <select id="department" name="department">
+                    <option value="">Select Department</option>
+                </select>
+                
+				<label>Hashtag (Press space to add Hashtag)</label>
+                <div class="content">
+                    <ul id="tag-list"><input id="tag-input" type="text" spellcheck="false" placeholder="Press space to add Hashtag"></ul>
+                </div>
+				<input type="hidden" name="hashtag" value="" />
+                <input class="button-create-ticket" type="submit" name="submit" value="Submit" id="createTicket">
+			</form>
+
+			<button class="button-back" onclick="history.back()">Go Back</button>
+		</div>
+    </main>
+	<footer>
+		<p>Copyright © 
+		<script>document.write(new Date().getFullYear());</script>
+		Fast@Ticket. Todos os direitos reservados.</p>
+	</footer>
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script defer="defer" src="createTicket.js"></script>
+</body>
+</html>
+

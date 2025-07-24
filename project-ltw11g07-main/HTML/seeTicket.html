@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Fast@Ticket | Details Ticket</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <header>
+        <div class="header">
+            <h1 onclick="location.href='main.html'">Fast@Ticket</h1>
+            <a id="nameHeader"></a>
+            <img class="img-header" id="avatarHeader">
+        </div>
+	</header>
+    <nav>
+        <div style="margin-right: 5%;">
+            <div class="dropdown" id="menuDepartment">
+                <button class="dropbtn">Department<i class="fa fa-caret-down" ></i></button>
+                <div class="dropdown-content">
+                    <a href="addDepartment.html" id="addDepartment">Add</a>
+                    <a href="seeDepartment.html" id="seeDepartment">See</a>
+
+                </div>
+            </div>
+            <div class="dropdown" id="menuUser">
+                <button class="dropbtn">User<i class="fa fa-caret-down"></i></button>
+                <div class="dropdown-content">
+                    <a href="listUser.html">List User</a>
+                    <a href="register.html">Register User</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">Ticket<i class="fa fa-caret-down"></i></button>
+                <div class="dropdown-content">
+                    <a href="myListTicket.html">My Ticket</a>
+                    <a href="createTicket.html">Request a Ticket</a>
+                    <a href="listTicket.html" id="allTicketMenu">All Ticket</a>
+                </div>
+            </div>
+            <div class="dropdown" id="menuAdmin">
+                <button class="dropbtn">Account<i class="fa fa-caret-down"></i></button>
+                <div class="dropdown-content">
+                    <a href="myProfile.html">My Profile</a>
+                    <a href="editMyProfile.html">Edit My Profile</a>
+                    <a href="../PHP/logout.php">Logout</a>
+                </div>
+            </div>
+        </div>
+
+    </nav>
+
+
+    <main>
+        <div class="see-ticket-box">
+            <div class="flex-row">
+                <h2 style="width: 90%;" id="numberTicket"></h2>
+                <button class="button-edit" id="edit" >Edit</button>
+                <button class="button-assign" id="assign">Assign me</button>
+            </div>
+            <label class="title-separator">Details Ticket</label>
+            <div class="background-separator">
+                <div class="flex-row">
+                    <div class="flex-row-50">
+                        <label >Subject:&nbsp;</label>
+                        <p id="subject"></p>
+                    </div>
+                    <div class="flex-row-50">
+                        <label >Department:&nbsp;</label>
+                        <p id="department"></p>
+                    </div>
+                </div>
+                    
+                <label>Description:&nbsp;</label>
+                <a id="description"></a>
+
+                <div class="flex-row">
+                    <div class="flex-row-50">
+                        <label>Date Created:&nbsp;</label>
+                        <p id="createDate"></p>
+                    </div>
+                    <div class="flex-row-50">
+                        <label>Date Update:&nbsp;</label>
+                        <p id="updateDate"></p>
+                    </div>
+                </div>
+                <div class="flex-row-50" id="container">
+                    <label>Hashtag:&nbsp;</label>
+                </div>
+
+                <div class="flex-row">
+                    <div class="flex-row-50">
+                        <label>Reporter:&nbsp;</label>
+                        <p  id="reporter">anafaria</p>
+                    </div>
+                    <div class="flex-row-50">
+                        <label>Agent:&nbsp;</label>
+                        <p id="agent">gasparfaria</p>
+                    </div>
+                </div>
+
+                <div class="flex-row">
+                    <div class="flex-row-50">
+                        <label>Status:&nbsp;</label>
+                        <p id="status"></p>
+                    </div>
+                    <div class="flex-row-50">
+                        <label>Priority:&nbsp;</label>
+                        <p id="priority"></p>
+                    </div>
+                </div>
+            </div>
+            
+            <label class="title-separator">Changes Ticket</label>
+            <div class="background-separator" id="changeTicket">
+            </div>
+        
+            <label class="title-separator">Conversation:&nbsp;</label>
+            <form class="background-separator" id="reply-form" method="post" action="../PHP/replyTicket.php">
+                <div  id="allMessage"></div>  
+                <textarea name="message" placeholder="Write message (max 500 characters)" maxlength="500" id="replyMessage"s></textarea>
+                <input type="hidden" name="username" id="replyUsername">
+                <input type="hidden" name="change_type" id="replyType">
+                <input type="hidden" name="ticket_id" id="replyId">
+                <input class="button-reply" type="submit" name="submit" value="Reply" id="replyBtn"></input>                
+            </form>
+			<button class="button-back" onclick="history.back()">Go Back</button>
+		</div>
+    </main>
+
+	<footer>
+		<p>Copyright © 
+		<script>document.write(new Date().getFullYear());</script>
+		Fast@Ticket. Todos os direitos reservados.</p>
+	</footer>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script defer="defer" src="seeTicket.js"></script>
+</body>
+</html>
+

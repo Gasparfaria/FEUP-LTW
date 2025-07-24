@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Fast@Ticket | department</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <header>
+        <div class="header">
+            <h1 onclick="location.href='main.html'">Fast@Ticket</h1>
+            <a id="nameHeader"></a>
+            <img class="img-header" id="avatarHeader">
+        </div>
+	</header>
+    <nav>
+        <div style="margin-right: 5%;">
+            <div class="dropdown" id="menuDepartment">
+                <button class="dropbtn">Department<i class="fa fa-caret-down" ></i></button>
+                <div class="dropdown-content">
+                    <a href="addDepartment.html" id="addDepartment">Add</a>
+                    <a href="seeDepartment.html" id="seeDepartment">See</a>
+                </div>
+            </div>
+            <div class="dropdown" id="menuUser">
+                <button class="dropbtn">User<i class="fa fa-caret-down"></i></button>
+                <div class="dropdown-content">
+                    <a href="listUser.html">List User</a>
+                    <a href="register.html">Register User</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">Ticket<i class="fa fa-caret-down"></i></button>
+                <div class="dropdown-content">
+                    <a href="myListTicket.html">My Ticket</a>
+                    <a href="createTicket.html">Request a Ticket</a>
+                    <a href="listTicket.html" id="allTicketMenu">All Ticket</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">FAQs<i class="fa fa-caret-down"></i></button>
+                <div class="dropdown-content">
+                    <a href="faqs.html">See Faqs</a>
+                    <a href="addFaqs.html" id="addFaqs">Add Faqs</a>
+                </div>
+            </div>
+            <div class="dropdown" id="menuAdmin">
+                <button class="dropbtn">Account<i class="fa fa-caret-down"></i></button>
+                <div class="dropdown-content">
+                    <a href="myProfile.html">My Profile</a>
+                    <a href="editMyProfile.html">Edit My Profile</a>
+                    <a href="../PHP/logout.php">Logout</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <div class="alert" id="alert" style="visibility: hidden;">
+            <span class="closebtn" onclick='hiddenAlert()'>&times;</span>
+            <strong id="messageAlert"></strong>
+        </div>
+		<div class="sign-up-box">
+			<h2>Add FAQs</h2>
+			<form id="faqs-form" name="faqs-form" method="post" action="../PHP/faq.php">
+				<label>Question</label>
+				<input id="question" type="text" name="question" placeholder="Write the question (max 100 characters)" maxlength="100">
+                <label>Answer</label>
+                <textarea id="answer" name="answer" placeholder="Write the answer (max 600 characters)" maxlength="600"></textarea>
+				<input class="button-register" type="submit" name="submit" value="Add">
+			</form>
+			<button class="button-back" onclick="location.href='main.html'">Go Back</button>
+		</div>
+	</main>
+
+	<footer>
+		<p>Copyright © 
+		<script>document.write(new Date().getFullYear());</script>
+		Fast@Ticket. Todos os direitos reservados.</p>
+	</footer>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script defer="defer" src="addFaqs.js"></script>
+</body>
+</html>
+

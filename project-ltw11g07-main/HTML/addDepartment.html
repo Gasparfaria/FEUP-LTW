@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Fast@Ticket | Department</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <header>
+        <div class="header">
+            <h1 onclick="location.href='main.html'">Fast@Ticket</h1>
+            <a id="nameHeader"></a>
+            <img class="img-header" id="avatarHeader">
+        </div>
+	</header>
+    <nav>
+        <div style="margin-right: 5%;">
+            <div class="dropdown" id="menuDepartment">
+                <button class="dropbtn">Department<i class="fa fa-caret-down" ></i></button>
+                <div class="dropdown-content">
+                    <a href="addDepartment.html" id="addDepartment">Add</a>
+                    <a href="seeDepartment.html" id="seeDepartment">See</a>
+                </div>
+            </div>
+            <div class="dropdown" id="menuUser">
+                <button class="dropbtn">User<i class="fa fa-caret-down"></i></button>
+                <div class="dropdown-content">
+                    <a href="listUser.html">List User</a>
+                    <a href="register.html">Register User</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">Ticket<i class="fa fa-caret-down"></i></button>
+                <div class="dropdown-content">
+                    <a href="myListTicket.html">My Ticket</a>
+                    <a href="createTicket.html">Request a Ticket</a>
+                    <a href="listTicket.html" id="allTicketMenu">All Ticket</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">FAQs<i class="fa fa-caret-down"></i></button>
+                <div class="dropdown-content">
+                    <a href="faqs.html">See Faqs</a>
+                    <a href="addFaqs.html" id="addFaqs">Add Faqs</a>
+                </div>
+            </div>
+            <div class="dropdown" id="menuAdmin">
+                <button class="dropbtn">Account<i class="fa fa-caret-down"></i></button>
+                <div class="dropdown-content">
+                    <a href="myProfile.html">My Profile</a>
+                    <a href="editMyProfile.html">Edit My Profile</a>
+                    <a href="../PHP/logout.php">Logout</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <div class="alert" id="alert" style="visibility: hidden;">
+            <span class="closebtn" onclick='hiddenAlert()'>&times;</span>
+            <strong id="messageAlert"></strong>
+        </div>
+        <div class="add-department-box">
+            <h2 style="margin-top: 20px;">List departments</h2>
+            <form method="post" class="flex-row" id="adddepartment-form" action="../PHP/adddepartment.php">
+                <input type="text" name="department" placeholder="Add new department" id="newdepartment">
+                <input class="button-add-department" type="submit" name="submit" value="+" id="adddepartment">
+            </form>
+            <table class="department-list" id="mytable">
+                <thead>
+                    <th>Department</th>
+                    <th>Actions</th>
+                </thead>
+                <tbody id="tbody"></tbody>  
+            </table>     
+        </div>
+    </main>
+
+	<footer>
+		<p>Copyright © 
+		<script>document.write(new Date().getFullYear());</script>
+		Fast@Ticket. Todos os direitos reservados.</p>
+	</footer>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script defer="defer" src="adddepartment.js"></script>
+</body>
+</html>
+

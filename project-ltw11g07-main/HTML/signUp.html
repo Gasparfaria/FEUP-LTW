@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Fast@Ticket | Sign Up</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+	<header>
+		<h1 id="beforeLogin">Fast@Ticket</h1>
+	</header>
+
+	<main>
+		<div class="sign-up-box">
+			<h2>Sign Up</h2>
+
+			<form id="signup-form" name="signup-form" method="post" action="../PHP/signUp.php">
+				<label>Name</label>
+				<input type="text" name="name" placeholder="Name">
+				<label>Username</label>
+				<input type="text" name="username" placeholder="Username">
+				<label>Email Address</label>
+				<input type="email" name="email" placeholder="Email Address">
+				<label>Password</label>
+				<input type="password" name="password" placeholder="Password">
+				<label>Confirm Password</label>
+				<input type="password" name="confirm_password" placeholder="Confirm Password">
+				<label>Choose your Avatar</label>
+				<div class="avatar">
+					<div class="flex-column">
+						<img src="img/avatar1.png" alt="Avatar 1">
+						<input type="radio" name="avatar" value="avatar1" id="avatar1">
+					</div>
+					<div class="flex-column">
+						<img src="img/avatar2.png" alt="Avatar 2">
+						<input type="radio" name="avatar" value="avatar2" id="avatar2">
+					</div>
+					<div class="flex-column">
+						<img src="img/avatar3.png" alt="Avatar 3">
+						<input type="radio" name="avatar" value="avatar3" id="avatar3">
+					</div>
+					<div class="flex-column">
+						<img src="img/avatar4.png" alt="Avatar 4">
+						<input type="radio" name="avatar" value="avatar4" id="avatar4">
+					</div>
+				</div>
+
+				<input class="button-register" type="submit" name="submit" value="Sign Up">
+
+			</form>
+
+			<button class="button-back" onclick="history.back()">Go Back</button>
+		</div>
+	</main>
+
+	<footer>
+		<p>Copyright ©
+			<script>document.write(new Date().getFullYear());</script>
+			Fast@Ticket. Todos os direitos reservados.
+		</p>
+	</footer>
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	<script src="signUp.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Fast@Ticket | Profile</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <header>
+        <div class="header">
+            <h1 onclick="location.href='main.html'">Fast@Ticket</h1>
+            <a id="nameHeader"></a>
+            <img class="img-header" id="avatarHeader">
+        </div>
+	</header>
+    <nav>
+        <div style="margin-right: 5%;">
+            <div class="dropdown" id="menuDepartment">
+                <button class="dropbtn">Department<i class="fa fa-caret-down" ></i></button>
+                <div class="dropdown-content">
+                    <a href="addDepartment.html" id="addDepartment">Add</a>
+                    <a href="seeDepartment.html" id="seeDepartment">See</a>
+                </div>
+            </div>
+            <div class="dropdown" id="menuUser">
+                <button class="dropbtn">User<i class="fa fa-caret-down"></i></button>
+                <div class="dropdown-content">
+                    <a href="listUser.html">List User</a>
+                    <a href="register.html">Register User</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">Ticket<i class="fa fa-caret-down"></i></button>
+                <div class="dropdown-content">
+                    <a href="myListTicket.html">My Ticket</a>
+                    <a href="createTicket.html">Request a Ticket</a>
+                    <a href="listTicket.html" id="allTicketMenu">All Ticket</a>
+                </div>
+            </div>
+            <div class="dropdown" id="menuAdmin">
+                <button class="dropbtn">Account<i class="fa fa-caret-down"></i></button>
+                <div class="dropdown-content">
+                    <a href="myProfile.html">My Profile</a>
+                    <a href="editMyProfile.html">Edit My Profile</a>
+                    <a href="../PHP/logout.php">Logout</a>
+                </div>
+            </div>
+        </div>
+
+    </nav>
+
+
+	<main>
+		<div class="sign-up-box">
+			<h2>Profile</h2>
+            <img class="img-profile" id="avatarUser">
+            <h3 id="nameUser"></h3><br>
+            <div class="flex-row">
+                <label>Username:&nbsp;</label>
+                <p id="username"></p>
+            </div><br>
+            <div class="flex-row">
+                <label>Email:&nbsp;</label>
+                <a id="email"></a>
+            </div><br>
+            <div class="flex-row">
+                <label>Type User:&nbsp;</label>
+                <a id="userType"></a>
+            </div><br>
+            <div class="flex-row">
+                <label>Department:&nbsp;</label>
+                <a id="department"></a>
+            </div><br>
+            <button class="button-see-tickets-user" id="seeTicket">Tickets create user</button>
+			<button class="button-back" onclick="history.back()">Go Back</button>
+		</div>
+	</main>
+
+	<footer>
+		<p>Copyright © 
+		<script>document.write(new Date().getFullYear());</script>
+		Fast@Ticket. Todos os direitos reservados.</p>
+	</footer>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script defer="defer" src="profileUser.js"></script>
+</body>
+</html>
+

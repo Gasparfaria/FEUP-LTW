@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Fast@Ticket | Register</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+	<header>
+        <div class="header">
+            <h1>Fast@Ticket</h1>
+            <a id="nameHeader"></a>
+            <img class="img-header" id="avatarHeader">
+        </div>
+    </header>
+    <nav>
+        <div style="margin-right: 5%;">
+            <div class="dropdown" id="menuDepartment">
+                <button class="dropbtn">Department<i class="fa fa-caret-down"></i></button>
+                <div class="dropdown-content">
+                    <a href="addDepartment.html" id="addDepartment">Add</a>
+					<a href="seeDepartment.html" id="seeDepartment">See</a>
+                </div>
+            </div>
+            <div class="dropdown" id="menuUser">
+                <button class="dropbtn">User<i class="fa fa-caret-down"></i></button>
+                <div class="dropdown-content">
+                    <a href="listUser.html">List User</a>
+                    <a href="register.html">Register User</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">Ticket<i class="fa fa-caret-down"></i></button>
+                <div class="dropdown-content">
+                    <a href="myListTicket.html">My Ticket</a>
+                    <a href="createTicket.html">Request a Ticket</a>
+                    <a href="listTicket.html" id="allTicketMenu">All Ticket</a>
+                </div>
+            </div>
+            <div class="dropdown" id="menuAdmin">
+                <button class="dropbtn">Account<i class="fa fa-caret-down"></i></button>
+                <div class="dropdown-content">
+                    <a href="myProfile.html">My Profile</a>
+                    <a href="editMyProfile.html">Edit My Profile</a>
+                    <a href="../PHP/logout.php">Logout</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+	<main>
+		<div class="alert" id="alert">
+            <span class="closebtn" onclick='hiddenAlert()'>&times;</span>
+            <strong id="messageAlert"></strong>
+        </div>
+		<div class="sign-up-box">
+			<h2>Register</h2>
+
+			<form id="signup-form" name="signup-form" method="post" action="../PHP/register.php">
+				<label>Name</label>
+				<input type="text" name="name" placeholder="Name">
+				<label>Username</label>
+				<input type="text" name="username" placeholder="Username">
+				<label>Email Address</label>
+				<input type="email" name="email" placeholder="Email Address">
+				<label>Password</label>
+				<input type="password" name="password" placeholder="Password">
+				<label>Confirm Password</label>
+				<input type="password" name="confirm_password" placeholder="Confirm Password">
+                <label>Type User</label>
+					<select name="typeUser" id="typeUser">
+						<option value="">Type User</option>
+						<option value="Client">Client</option>
+						<option value="Agent">Agent</option>
+						<option value="Admin">Admin</option>
+					</select>
+				<label>Choose your Avatar</label>
+				<div class="avatar">
+					<div class="flex-column">
+						<img src="img/avatar1.png" alt="Avatar 1">
+						<input type="radio" name="avatar" value="avatar1" id="avatar1">
+					</div>
+					<div class="flex-column">
+						<img src="img/avatar2.png" alt="Avatar 2">
+						<input type="radio" name="avatar" value="avatar2" id="avatar2">
+					</div>
+					<div class="flex-column">
+						<img src="img/avatar3.png" alt="Avatar 3">
+						<input type="radio" name="avatar" value="avatar3" id="avatar3">
+					</div>
+					<div class="flex-column">
+						<img src="img/avatar4.png" alt="Avatar 4">
+						<input type="radio" name="avatar" value="avatar4" id="avatar4">
+					</div>
+				</div>
+
+				<input class="button-register" type="submit" name="submit" value="Register">
+
+			</form>
+
+			<button class="button-back" onclick="history.back()">Go Back</button>
+		</div>
+	</main>
+
+	<footer>
+		<p>Copyright ©
+			<script>document.write(new Date().getFullYear());</script>
+			Fast@Ticket. Todos os direitos reservados.
+		</p>
+	</footer>
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	<script src="register.js"></script>
+</body>
+
+</html>
